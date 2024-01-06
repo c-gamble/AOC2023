@@ -171,6 +171,7 @@ std::string solve(char** argv) {
     }
     std::set<std::pair<int, int>> outsideUnionLoop;
     std::set_union(outside.begin(), outside.end(), loop.begin(), loop.end(), std::inserter(outsideUnionLoop, outsideUnionLoop.begin()));
+    std::cout << newGraph.size() << " " << newGraph[0].size() << " " << outside.size() << " " << loop.size() << std::endl;
     ans = newGraph.size() * newGraph[0].size() - outsideUnionLoop.size();
     return std::to_string(ans);
 }
